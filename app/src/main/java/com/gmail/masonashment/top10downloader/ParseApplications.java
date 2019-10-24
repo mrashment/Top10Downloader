@@ -69,8 +69,11 @@ public class ParseApplications {
                         // nothing else to do
                 }
                 eventType = xpp.next();
+            } //main while loop
+            for (FeedEntry app: applications) {
+                Log.d(TAG, "********************");
+                Log.d(TAG, app.toString());
             }
-
         } catch (Exception e) {
             status = false;
             e.printStackTrace();
