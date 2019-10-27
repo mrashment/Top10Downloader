@@ -1,6 +1,7 @@
 package com.gmail.masonashment.top10downloader;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,17 +39,16 @@ public class FeedAdapter extends ArrayAdapter {
         ViewHolder viewHolder;
 
         if (convertView == null) {
+            Log.d(TAG, "getView: called with null convertView");
             convertView = layoutInflater.inflate(layoutResource, parent, false);
 
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
 
         } else {
+            Log.d(TAG, "getView: provided a convertView");
             viewHolder = (ViewHolder) convertView.getTag();
         }
-//        TextView tvName = convertView.findViewById(R.id.tvName);
-//        TextView tvArtist = convertView.findViewById(R.id.tvArtist);
-//        TextView tvSummary = convertView.findViewById(R.id.tvSummary);
 
         FeedEntry currentApp = applications.get(position);
 
